@@ -1,0 +1,27 @@
+html {
+    --anim8-time: .5s;
+    --anim8: none;
+}
+
+/* grid  */
+
+
+
+
+/* animation */
+
+
+
+@keyframes blinker {
+    10% {
+        background-color: red;
+    }
+    11% {
+        background-color: black;
+    }
+}
+
+.seq-led-blink {
+    
+}
+

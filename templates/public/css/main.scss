@@ -1,0 +1,122 @@
+@import 'sequencer.css';
+@import 'sequencer-animate.css';
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+
+   opacity: .7;
+   transform: scale(1.7);
+
+}
+
+@font-face {
+    font-family: 'digital-7';
+    src: local('digital-7'), url(../fonts/digital-7.ttf) format('truetype');
+  }
+
+.digital-text {
+    
+}
+
+input.bpm {
+    font-family: 'digital-7';
+    width: 113px;
+    height: 60px;
+    font-size: 50px;
+    background-color: black;
+    color: red;
+    padding-top: 4%;
+    padding-left: 7%;
+}
+
+*:focus {
+    outline: none;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+div.hide-div {
+    display: none;
+}
+
+div.main-container {
+    justify-content: center;
+}
+
+.drum-container {
+    display: grid;
+    grid-template-columns: 1fr 610px 1fr;
+    background-color: yellow;
+}
+
+.drum-container-item {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    min-width: 0; 
+    min-height: 0;
+}
+
+.drum-selector-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 33px;
+    padding: 0% 11% 15% 5%;
+}
+
+.drum-selector-item {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    min-width: 0; 
+    min-height: 21px;
+}
+
+.sequence-container {
+    justify-content: center;
+    display: inline-grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 6px;
+    text-align: center;
+    background-color: green;
+    overflow: scroll;
+    min-width: 0; 
+    min-height: 0;
+    padding: 4%
+}
+
+.sequence-item {
+    grid-column-start: 1;
+    grid-column-end: 16;
+    min-width: 0; 
+    min-height: 0;
+}
+
+
+div.transport-container {
+    background-color: purple;
+}
+
+div.tempo-container {
+
+}
+
+
+.tempo-blink {
+    background-color: black;
+    animation: var(--anim8) var(--anim8-time) infinite;
+    border-radius: 50%;
+    color: #d4d4d4;
+    height: 45px;
+    width: 45px;
+    padding-top: 20%;
+    padding-left: 11%;
+    border-style: dashed;
+    border-color: red;
+}
+
+.wireframe {
+    border-color: black;
+    border: 3px;
+}

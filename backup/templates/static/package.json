@@ -1,0 +1,39 @@
+{
+  "name": "browser_music",
+  "version": "1.0.0",
+  "description": "application for creating music in a web browser ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -p --progress --config webpack.config.js",
+    "dev-build": "webpack --progress -d --config webpack.config.js",
+    "watch": "webpack --progress -d --config webpack.config.js --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.3.0",
+    "midi-sounds-react": "^1.2.45",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.13.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "fibers": "^4.0.2",
+    "history": "^4.10.1",
+    "react-modal": "^3.11.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.3.0",
+    "sass": "^1.23.7"
+  }
+}

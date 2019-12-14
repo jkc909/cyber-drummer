@@ -1,0 +1,83 @@
+.led-sequence-container {
+    justify-content: center;
+    display: inline-grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10%;
+    text-align: center;
+    background-color: red;
+    min-width: 0; 
+    min-height: 0;
+}
+
+.seq-step {
+    animation: var(--anim8) var(--anim8-time-seq) infinite;
+    background-color: black;
+    color: green;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.seq-step:nth-child(1) {
+    animation-delay: var(--seq-1);
+}
+
+.seq-step:nth-child(2) {
+    animation-delay: var(--seq-2);
+}
+
+.seq-step:nth-child(3) {
+    animation-delay: var(--seq-3);
+}
+
+.seq-step:nth-child(4) {
+    animation-delay: var(--seq-4);
+}
+
+.seq-step:nth-child(5) {
+    animation-delay: var(--seq-5);
+}
+
+.seq-step:nth-child(6) {
+    animation-delay: var(--seq-6);
+}
+
+.seq-step:nth-child(7) {
+    animation-delay: var(--seq-7);
+}
+
+.seq-step:nth-child(8) {
+    animation-delay: var(--seq-8);
+}
+
+.seq-step:nth-child(9) {
+    animation-delay: var(--seq-9);
+}
+
+.seq-step:nth-child(10) {
+    animation-delay: var(--seq-10);
+}
+
+.seq-step:nth-child(11) {
+    animation-delay: var(--seq-11);
+}
+
+.seq-step:nth-child(12) {
+    animation-delay: var(--seq-12);
+}
+
+.seq-step:nth-child(13) {
+    animation-delay: var(--seq-13);
+}
+
+.seq-step:nth-child(14) {
+    animation-delay: var(--seq-14);
+}
+
+.seq-step:nth-child(15) {
+    animation-delay: var(--seq-15);
+}
+
+.seq-step:nth-child(16) {
+    animation-delay: var(--seq-16);
+}
