@@ -14,11 +14,8 @@ import Grid from '@material-ui/core/Grid';
 
 import { Typography } from '@material-ui/core';
 
-import Select from '@material-ui/core/Select';
-
-
-
 import DrumContainer from './DrumContainer.jsx'
+import BpmContainer from './BpmContainer.jsx'
 
 
 // I LIKE THIS FONT https://fonts.google.com/specimen/Orbitron
@@ -83,6 +80,7 @@ class MainContent extends Component {
         };
         this.beats=[];
         this.toggleDrum = this.toggleDrum.bind(this);
+        this.setBpm = this.setBpm.bind(this);
         this.onSelectInstrument = this.onSelectInstrument.bind(this);
     };
 
@@ -95,6 +93,7 @@ class MainContent extends Component {
     };
 
     playLoop(){
+        debugger;
         let bpm = this.state.bpm;
         let bps = 60/bpm;
         
@@ -175,12 +174,8 @@ class MainContent extends Component {
         this.midiSounds.setEchoLevel(.1)
     }
 
-    setTempo(e){
-        this.setState({ bpm: e.target.value })
-    }
-
-    handleBpmInput(){
-        this.setState({ bpm: parseInt(event.target.value)})
+    setBpm(bpm){
+        this.setState({ bpm: bpm },this.playLoop)
     }
 
     playThing(){
@@ -209,26 +204,10 @@ class MainContent extends Component {
                         <Button variant="contained"  onClick={this.echoToggle.bind(this)}>ECHO</Button>
                         <Button variant="contained"  onClick={this.playThing.bind(this)}>THING</Button>
                     </div>
-                    <div>
-                        <Grid 
-                            container spacing={2} 
-                            alignItems="center"
-                        >   
-                            <Grid item>
-                                <input 
-                                    className="bpm" 
-                                    type="number" 
-                                    name="bpm" 
-                                    min="40"
-                                    max="250"
-                                    value={this.state.bpm}
-                                    onChange={this.setTempo.bind(this)}></input>
-                            </Grid>
-                            <Grid item width={1}>
-                                <div className="tempo-blink tempo-item ">BPM</div>
-                            </Grid>
-                        </Grid>
-                    </div>
+                    <BpmContainer 
+                        bpm={this.state.bpm}
+                        setBpm={this.setBpm}
+                    />
                 </div>
                 <Grid
                     container
