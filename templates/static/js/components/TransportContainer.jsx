@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import StopIcon from '@material-ui/icons/Stop';
 import Button from '@material-ui/core/Button';
 
+import PlayButton from '../tiles/buttons/PlayButton.jsx'
+import StopButton from '../tiles/buttons/StopButton.jsx'
 import BpmContainer from './BpmContainer.jsx'
 
 class TransportContainer extends Component {
@@ -17,7 +18,10 @@ class TransportContainer extends Component {
         return(
             <div className="transport-container">
                 <Button variant="contained" startIcon={<PlayArrowIcon />} onClick={this.props.playLoop} >PLAY</Button>
-                <Button variant="contained" startIcon={<StopIcon />} onClick={this.props.stopLoop}>STOP</Button>
+                <StopButton 
+                    stopLoop={this.props.stopLoop}
+
+                />
             <BpmContainer 
                 bpm={this.props.bpm}
                 setBpm={this.props.setBpm}
