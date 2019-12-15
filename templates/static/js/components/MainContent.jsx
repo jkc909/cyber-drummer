@@ -1,14 +1,5 @@
 import React, { Component } from 'react';
 import MIDISounds from 'midi-sounds-react';
-import Button from '@material-ui/core/Button';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import StopIcon from '@material-ui/icons/Stop';
-
-import ToggleButton from '@material-ui/lab/ToggleButton';
-import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
-
-import Slider from '@material-ui/core/Slider';
-import Input from '@material-ui/core/Input';
 
 import Grid from '@material-ui/core/Grid';
 
@@ -16,6 +7,7 @@ import { Typography } from '@material-ui/core';
 
 import DrumContainer from './DrumContainer.jsx'
 import BpmContainer from './BpmContainer.jsx'
+import TransportContainer from './TransportContainer.jsx'
 
 
 // I LIKE THIS FONT https://fonts.google.com/specimen/Orbitron
@@ -79,8 +71,10 @@ class MainContent extends Component {
             
         };
         this.beats=[];
-        this.toggleDrum = this.toggleDrum.bind(this);
         this.setBpm = this.setBpm.bind(this);
+        this.playLoop = this.playLoop.bind(this);
+        this.stopLoop = this.stopLoop.bind(this);
+        this.toggleDrum = this.toggleDrum.bind(this);
         this.onSelectInstrument = this.onSelectInstrument.bind(this);
     };
 
@@ -93,7 +87,6 @@ class MainContent extends Component {
     };
 
     playLoop(){
-        debugger;
         let bpm = this.state.bpm;
         let bps = 60/bpm;
         
@@ -198,13 +191,9 @@ class MainContent extends Component {
                         onSelectInstrument={this.onSelectInstrument}
                         selections={selections}
                     />
-                    <div className="transport-container">
-                        <Button variant="contained" startIcon={<PlayArrowIcon />} onClick={this.playLoop.bind(this)} >PLAY</Button>
-                        <Button variant="contained" startIcon={<StopIcon />} onClick={this.stopLoop.bind(this)}>STOP</Button>
-                        <Button variant="contained"  onClick={this.echoToggle.bind(this)}>ECHO</Button>
-                        <Button variant="contained"  onClick={this.playThing.bind(this)}>THING</Button>
-                    </div>
-                    <BpmContainer 
+                    <TransportContainer 
+                        playLoop={this.playLoop}
+                        stopLoop={this.stopLoop}
                         bpm={this.state.bpm}
                         setBpm={this.setBpm}
                     />
