@@ -1,3 +1,8 @@
+html {
+    --anim8-time: .5s;
+    --anim8: none;
+}
+
 .led-sequence-container {
     justify-content: center;
     display: inline-grid;
@@ -81,3 +86,13 @@
 .seq-step:nth-child(16) {
     animation-delay: var(--seq-16);
 }
+
+@keyframes blinker {
+            10% {
+                background-color: red;
+                box-shadow: 0 0 7px red;
+            }
+            11% {
+                background-color: black;
+            }
+        }
