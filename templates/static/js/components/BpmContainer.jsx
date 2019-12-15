@@ -34,6 +34,9 @@ class BpmContainer extends Component {
                     container spacing={2} 
                     alignItems="center"
                 >   
+                    <Grid item width={1}>
+                        <div className="tempo-blink tempo-item ">BPM</div>
+                    </Grid>
                     <Grid item>
                         <input 
                             className="bpm" 
@@ -52,9 +55,6 @@ class BpmContainer extends Component {
                         >
                             Set Tempo
                         </Button>
-                    </Grid>
-                    <Grid item width={1}>
-                        <div className="tempo-blink tempo-item ">BPM</div>
                     </Grid>
                 </Grid>
             
