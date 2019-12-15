@@ -54,13 +54,15 @@ class MainContent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            drums: [2,17,35,66,99],
+            drums: [2,17,35,66,99, 104, 84],
             hit:56,
             bass:437, 
             synth:521,
             tracks:[
                 [true,false,false,false,true,false,false,false,true,false,false,false,true,false,false,false],
                 [false,false,false,false,true,false,false,false,false,false,false,false,true,false,false,false],
+                [false,false,true,false,false,false,true,false,false,false,true,false,false,false,true,false],
+                [false,false,false,true,false,false,true,false,false,false,false,true,false,false,true,false],
                 [false,false,true,false,false,false,true,false,false,false,true,false,false,false,true,false],
                 [false,false,true,false,false,false,true,false,false,false,true,false,false,false,true,false],
                 [false,false,true,false,false,false,true,false,false,false,true,false,false,false,true,false],
@@ -80,6 +82,7 @@ class MainContent extends Component {
 
     componentDidMount(){
         this.setState({ initialized: true });
+        this.midiSounds.setEchoLevel(.1);
     };
 
     handleVolumeChange(value){
@@ -98,24 +101,22 @@ class MainContent extends Component {
             document.documentElement.style.setProperty(`--seq-${i}`, `${(i-1) * (bps/4)}s` );
         }
         document.documentElement.style.setProperty("--anim8", "blinker");
-        this.midiSounds.startPlayLoop(this.beats, bpm, 1/16)
+        this.midiSounds.startPlayLoop(this.beats, bpm, 1/16);
     }
 
     stopLoop(){
         let oldone = document.querySelector("div.tempo-blink");
     
         let newone = oldone.cloneNode(true);
-        oldone.parentNode.replaceChild(newone, oldone)
+        oldone.parentNode.replaceChild(newone, oldone);
         let oldsteps = document.querySelectorAll("div.seq-step");
         oldsteps.forEach( s => {
             let node = s.cloneNode(true);
             s.parentNode.replaceChild(node,s);
-        })
+        });
         document.documentElement.style.setProperty("--anim8", "none");
         this.midiSounds.stopPlayLoop();
-    }
-
-
+    };
 
     fillBeat(){
         for(let i=0;i<16;i++){
@@ -126,8 +127,8 @@ class MainContent extends Component {
             let beat=[drums,[]];
             
             this.beats[i]=beat;
-        }
-    }
+        };
+    };
 
 	createSelectItems() {
 		if (this.midiSounds) {
@@ -135,11 +136,11 @@ class MainContent extends Component {
 				this.items = [];
 				for (let i = 0; i < this.midiSounds.player.loader.drumKeys().length; i++) {
 					this.items.push(<option key={i} value={i}>{'' + (i + 0) + '. ' + this.midiSounds.player.loader.drumInfo(i).title}</option>);
-				}
-			}
+				};
+			};
 			return this.items;
-		}
-	}
+		};
+	};
 
 	onSelectInstrument(e,iter){
 		var list=e.target;
@@ -154,56 +155,50 @@ class MainContent extends Component {
 			});
 			me.fillBeat();
 			});
-	}
+	};
 
     toggleDrum(track,step){
         let a=this.state.tracks;
         a[track][step] = !a[track][step];
         this.setState({tracks:a});
         this.fillBeat();
-    }
+    };
 
     echoToggle(){
-        this.midiSounds.setEchoLevel(.1)
-    }
+        this.midiSounds.setEchoLevel(.1);
+    };
 
     setBpm(bpm){
-        this.setState({ bpm: bpm },this.playLoop)
-    }
+        this.setState({ bpm: bpm },this.playLoop);
+    };
 
-    playThing(){
-        let data=[
-            [[this.state.drums[0],this.state.drums[1]],[[this.state.bass,[O*3+C],1/16],[this.state.hit,[O*5+C],1/4],[this.state.synth,[O*3+C],1/1],[this.state.synth,[O*4+C],1/1],[this.state.synth,[O*3+G],1/1],[this.state.synth,[O*5+C],1/2],[this.state.synth,[O*5+d],3/8]]]
-        ]
-        this.midiSounds.startPlayLoop(data, 120, 1/4, this.midiSounds.beatIndex);
-    }
     
     render() {
-        let selections = this.createSelectItems()
+        let selections = this.createSelectItems();
 
         return (
             <div className="main-container">
-                <div>
-                    <DrumContainer 
-                        tracks={this.state.tracks}
-                        drums={this.state.drums}
-                        toggleDrum={this.toggleDrum}
-                        onSelectInstrument={this.onSelectInstrument}
-                        selections={selections}
-                    />
-                    <TransportContainer 
-                        playLoop={this.playLoop}
-                        stopLoop={this.stopLoop}
-                        bpm={this.state.bpm}
-                        setBpm={this.setBpm}
-                    />
-                </div>
                 <Grid
                     container
                     direction="column"
                     justify="center"
                     alignItems="center"
                 >
+                    <div>
+                        <DrumContainer 
+                            tracks={this.state.tracks}
+                            drums={this.state.drums}
+                            toggleDrum={this.toggleDrum}
+                            onSelectInstrument={this.onSelectInstrument}
+                            selections={selections}
+                        />
+                        <TransportContainer 
+                            playLoop={this.playLoop}
+                            stopLoop={this.stopLoop}
+                            bpm={this.state.bpm}
+                            setBpm={this.setBpm}
+                        />
+                    </div>
                 </Grid>
                 <div>
                     <div className="hide-div">
@@ -212,7 +207,7 @@ class MainContent extends Component {
                 </div>
             </div>
         );
-    }
-}
+    };
+};
 
 export default MainContent;

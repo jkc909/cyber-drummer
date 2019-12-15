@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 
+import SetBpmButton from '../tiles/buttons/SetBpmButton'
+
 class BpmContainer extends Component {
     constructor(props){
         super(props);
@@ -47,14 +49,11 @@ class BpmContainer extends Component {
                             value={this.state.bpm}
                             onChange={this.handleChangeBpm}></input>
                     </Grid>
-                    <Grid>
-                        <Button
-                            variant="outlined"
-                            disabled={this.state.disabled}
-                            onClick={this.handleBpmButton}
-                        >
-                            Set Tempo
-                        </Button>
+                    <Grid item>
+                    <SetBpmButton 
+                        disabled={this.state.disabled}
+                        handleBpmButton={this.handleBpmButton}
+                    />
                     </Grid>
                 </Grid>
             
