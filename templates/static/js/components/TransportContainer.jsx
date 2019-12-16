@@ -20,13 +20,13 @@ class TransportContainer extends Component {
                     <Grid item>
                         <Grid container>
                             <Grid item>
-                                <StopButton 
-                                    stopLoop={this.props.stopLoop}
+                                <PlayButton 
+                                    playLoop={this.props.playLoop}
                                 />
                             </Grid>
                             <Grid item>
-                                <PlayButton 
-                                    playLoop={this.props.playLoop}
+                                <StopButton 
+                                    stopLoop={this.props.stopLoop}
                                 />
                             </Grid>
                         </Grid>

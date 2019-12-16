@@ -1,19 +1,30 @@
 import React from 'react';
 import { createMuiTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import { green, purple,red } from '@material-ui/core/colors';
 
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
 const ColorButton = withStyles(theme => ({
   root: {
-    color: theme.palette.getContrastText(purple[500]),
-    backgroundColor: purple[500],
+    width: "100px",
+    height: "50px",
+    fontSize: "20px",
+    padding: "1px 9px",
+    backgroundColor: "black",
+    border: "1px outset #8cd58b",
+    boxShadow: "0 0 15px #8cd58b",
+    textShadow: "0 0 10px #8cd58b",
+    color: "#8cd58b",
+    animation: "playglow var(--anim8-time) ease-in-out infinite alternate",
     '&:hover': {
-      backgroundColor: purple[700],
+      backgroundColor: "#043603",
     },
     '&:disabled': {
-        backgroundColor: red[700],
+      boxShadow: "none",
+      textShadow: "none",
+      color: "#262c3d",
+      border: "1px solid #262c3d",
+      animation: "none",
       },
   },
 }))(Button);

@@ -134,3 +134,14 @@ div.tempo-container {
         box-shadow: 0 0 10px #fff, 0 0 15px #4db8ff;
     }
 }
+
+
+
+@-webkit-keyframes playglow {
+    from {
+        box-shadow: 0 0 5px #fff, 0 0 7px #00e626;
+    }
+    to {
+        box-shadow: 0 0 7px #fff, 0 0 11px #4dff4d;
+    }
+}
