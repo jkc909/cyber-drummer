@@ -7,13 +7,26 @@ import StopIcon from '@material-ui/icons/Stop';
 
 const ColorButton = withStyles(theme => ({
   root: {
-    color: theme.palette.getContrastText(purple[500]),
-    backgroundColor: purple[500],
+    width: "100px",
+    height: "50px",
+    fontSize: "20px",
+    padding: "1px 9px",
+    backgroundColor: "black",
+    border: "1px outset #e13434",
+    boxShadow: "0 0 5px #fff, 0 0 15px #e13434",
+    textShadow: "0 0 10px #e13434",
+    color: "#e13434",
+
     '&:hover': {
-      backgroundColor: purple[700],
+      backgroundColor: "#4a1111",
+      boxShadow: "0 0 5px #fff, 0 0 15px #e13434",
     },
     '&:disabled': {
-        backgroundColor: red[700],
+      boxShadow: "none",
+      textShadow: "none",
+      color: "#262c3d",
+      border: "1px solid #262c3d",
+      animation: "none",
       },
   },
 }))(Button);
