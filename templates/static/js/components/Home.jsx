@@ -25,10 +25,10 @@ class Home extends Component {
         return (
             <React.Fragment> 
                 <CssBaseline />
-                <Container fixed>
+                {/* <Container fixed> */}
                     <TopNavBar />
                     <MainContent />
-                </Container>
+                {/* </Container> */}
             </React.Fragment>
         );
     }

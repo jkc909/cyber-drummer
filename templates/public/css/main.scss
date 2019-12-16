@@ -4,7 +4,7 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {  
 
    opacity: .7;
-   transform: scale(1.7);
+   transform: scale(1.7) translate(0px, -3px)
 
 }
 
@@ -94,7 +94,9 @@ div.main-container {
 
 
 div.transport-container {
-    background-color: purple;
+    background-color: #070707;
+    width: 330px;
+    padding: 6px;
 }
 
 div.tempo-container {
@@ -103,7 +105,7 @@ div.tempo-container {
 
 
 .tempo-blink {
-    background-color: black;
+    background-color: #200404;
     animation: var(--anim8) var(--anim8-time) infinite;
     border-radius: 50%;
     color: #d4d4d4;
@@ -111,11 +113,42 @@ div.tempo-container {
     width: 45px;
     padding-top: 20%;
     padding-left: 11%;
-    border-style: dashed;
+    border-style: double;
     border-color: red;
 }
 
 .wireframe {
     border-color: black;
     border: 3px;
+}
+
+
+
+
+
+@-webkit-keyframes glow {
+    from {
+        box-shadow: 0 0 5px #fff, 0 0 7px #0036e6;
+    }
+    to {
+        box-shadow: 0 0 10px #fff, 0 0 15px #4db8ff;
+    }
+}
+
+@-webkit-keyframes playglow {
+    from {
+        box-shadow: 0 0 5px #fff, 0 0 7px #00e626;
+    }
+    to {
+        box-shadow: 0 0 7px #fff, 0 0 11px #4dff4d;
+    }
+}
+
+@-webkit-keyframes stopglow {
+    from {
+        box-shadow: 0 0 5px #fff, 0 0 7px #ec5d5d;
+    }
+    to {
+        box-shadow: 0 0 7px #fff, 0 0 11px #f12525;
+    }
 }
