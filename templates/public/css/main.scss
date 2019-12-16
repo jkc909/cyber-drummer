@@ -94,7 +94,7 @@ div.main-container {
 
 
 div.transport-container {
-    background-color: purple;
+    background-color: #070707;
     width: 330px;
     padding: 6px;
 }
@@ -120,4 +120,17 @@ div.tempo-container {
 .wireframe {
     border-color: black;
     border: 3px;
+}
+
+
+
+
+
+@-webkit-keyframes glow {
+    from {
+        box-shadow: 0 0 5px #fff, 0 0 7px #0036e6;
+    }
+    to {
+        box-shadow: 0 0 10px #fff, 0 0 15px #4db8ff;
+    }
 }

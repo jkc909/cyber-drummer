@@ -94,7 +94,6 @@ class MainContent extends Component {
         let bps = 60/bpm;
         
         this.fillBeat();
-        this.stopLoop();
         document.documentElement.style.setProperty("--anim8-time", `${bps}s`);
         document.documentElement.style.setProperty("--anim8-time-seq", `${bps*4}s`);
         for(let i=1;i<17;i++) {

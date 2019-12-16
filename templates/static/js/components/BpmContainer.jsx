@@ -24,7 +24,8 @@ class BpmContainer extends Component {
 
     handleBpmButton(){
         this.props.setBpm(this.state.bpm)
-        this.setState({ disabled: true})
+        setTimeout(this.setState({ disabled: true}), 1000);
+        
     }
 
     render(){
