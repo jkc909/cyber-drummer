@@ -3,24 +3,16 @@ html {
     --anim8: none;
 }
 
-.led-sequence-container {
-    justify-content: center;
-    display: inline-grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10%;
-    text-align: center;
-    background-color: red;
-    min-width: 0; 
-    min-height: 0;
+.seq-step {
+    color: red;
+    border: solid black;
 }
 
-.seq-step {
-    animation: var(--anim8) var(--anim8-time-seq) infinite;
+.led {
     background-color: black;
-    color: green;
-    text-align: center;
     border-radius: 50%;
+    animation: var(--anim8) var(--anim8-time-seq) infinite;
+    animation-delay: inherit;
 }
 
 .seq-step:nth-child(1) {
