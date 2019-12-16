@@ -44,18 +44,9 @@ div.main-container {
     justify-content: center;
 }
 
-
-
-
-
-
-
-
-
-
 .drum-container-grid-items {
     border-style: solid;
-    min-height: 50px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,7 +63,7 @@ div.main-container {
 .drum-container {
     display: grid;
     grid-template-columns: 1fr 610px 1fr;
-    background-color: yellow;
+    background-color: #070707;
 }
 
 .drum-container-item {
@@ -95,12 +86,16 @@ div.main-container {
 .sequence-container {
     display: inline-grid;
     grid-template-columns: repeat(16, 1fr);
-    background-color: green;
 }
 
 .sequence-item {
     grid-column-start: 1;
     grid-column-end: 16;
+}
+
+.trigs {
+    overflow: hidden;
+    background-color: green;
 }
 
 

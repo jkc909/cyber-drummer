@@ -9,7 +9,13 @@ html {
 }
 
 .led {
-    background-color: black;
+    background-color: #200404;
+    text-align: center;
+    height: 27px;
+    width: 27px;
+    padding: 1px 0;
+    color: #d4d4d4;
+    border: 2px dotted orange;
     border-radius: 50%;
     animation: var(--anim8) var(--anim8-time-seq) infinite;
     animation-delay: inherit;

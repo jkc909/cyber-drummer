@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
-import ToggleButton from '@material-ui/lab/ToggleButton';
-import Grid from '@material-ui/core/Grid';
+import TrigButton from '../tiles/buttons/TrigButton'
 
 const DrumContainer = props => {
     
@@ -23,8 +22,11 @@ const DrumContainer = props => {
         let iter = i
         t.forEach ((n,i) => {
             sequence.push( 
-                <div key={`trig_${iter}_${i}`} className="drum-container-grid-items">
-                    <ToggleButton className="sequence-item" selected={Boolean(n)} value="" onChange={(e)=>props.toggleDrum(iter,i)} > </ToggleButton>
+                <div key={`trig_${iter}_${i}`} className="trigs drum-container-grid-items">
+                    <TrigButton 
+                        selected={Boolean(n)} 
+                        toggleDrum={(e)=>props.toggleDrum(iter,i)} 
+                    /> 
                 </div>
             )
         })
