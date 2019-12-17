@@ -1,22 +1,23 @@
 import React from 'react';
-import { createMuiTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import ToggleButton from '@material-ui/lab/ToggleButton';
 
 const theme = createMuiTheme({
     overrides: {
       MuiToggleButton: {
         root: {
-            backgroundColor: "red",
+            backgroundColor: "#ff00fc1a",
           "&:hover": {
-            backgroundColor: "pink",
+            backgroundColor: "#ff00fc6b",
           },
           "&$selected": {
-            backgroundColor: "orange",
-            color: "orange",
+            backgroundColor: "#ff00fc",
             "&:hover": {
-              backgroundColor: "blue",
-              color: "blue"
+              backgroundColor: "#ff00fc6b",
             }
+          },
+          '&:focus': {
+            outline: "none",
           }
         },
       }

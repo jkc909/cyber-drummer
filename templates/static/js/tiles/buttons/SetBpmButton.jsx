@@ -1,7 +1,6 @@
 import React from 'react';
-import { createMuiTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import { green, purple,red } from '@material-ui/core/colors';
 
 const ColorButton = withStyles(theme => ({
   root: {
@@ -24,6 +23,9 @@ const ColorButton = withStyles(theme => ({
       border: "1px solid #262c3d",
       animation: "none",
       },
+      '&:focus': {
+        outline: "none",
+      }
   },
 }))(Button);
 
