@@ -38,7 +38,7 @@ const DrumContainer = props => {
         sequence.push(track)
         drum_selectors.push(
             <div className="drum-selector-item drum-container-grid-items" key={iter}>
-                <select value={props.drums[iter]} onChange={(e) => props.onSelectInstrument(e,iter)}>{props.selections}</select>
+                <select className="drum-selector" value={props.drums[iter]} onChange={(e) => props.onSelectInstrument(e,iter)}>{props.selections}</select>
             </div>
         )
         drum_buttons.push(
@@ -52,13 +52,13 @@ const DrumContainer = props => {
 
     sequence.forEach((s,iter) => {
         full_trigs_container.push(
-            <div className="sequence-container drum-container-grid" key={iter}>
+            <div className={`${(iter===0) ? 'led-wrapper' : 'sequence-container'} drum-container-grid`} key={iter}>
                 {s}
             </div>
         )
     });
 
-
+    
     return(
         <div className="drum-container ">
             <Fragment>

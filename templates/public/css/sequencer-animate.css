@@ -5,7 +5,7 @@ html {
 
 .seq-step {
     color: red;
-    border: solid black;
+    border: none;
 }
 
 .led {
@@ -19,6 +19,12 @@ html {
     border-radius: 50%;
     animation: var(--anim8) var(--anim8-time-seq) infinite;
     animation-delay: inherit;
+}
+
+.led-wrapper {
+    display: inline-grid;
+    grid-template-columns: repeat(16, 1fr);
+    border: none;
 }
 
 .seq-step:nth-child(1) {
