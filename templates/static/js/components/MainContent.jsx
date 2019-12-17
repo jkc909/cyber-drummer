@@ -3,14 +3,8 @@ import MIDISounds from 'midi-sounds-react';
 
 import Grid from '@material-ui/core/Grid';
 
-import { Typography } from '@material-ui/core';
-
 import DrumContainer from './DrumContainer.jsx'
-import BpmContainer from './BpmContainer.jsx'
 import TransportContainer from './TransportContainer.jsx'
-
-
-// I LIKE THIS FONT https://fonts.google.com/specimen/Orbitron
 
 const O = 12;
 
@@ -54,18 +48,19 @@ class MainContent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            drums: [2,17,35,66,99, 104, 84],
+            drums: [160,168,199,99,66,35,17,2],
             hit:56,
             bass:437, 
             synth:521,
             tracks:[
-                [true,false,false,false,true,false,false,false,true,false,false,false,true,false,false,false],
-                [false,false,false,false,true,false,false,false,false,false,false,false,true,false,false,false],
+                [false,true,false,false,false,false,false,true,true,false,false,false,false,false,true,false],
+                [false,false,false,true,false,false,false,false,false,true,false,false,true,false,false,false],
+                [false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false],
                 [false,false,true,false,false,false,true,false,false,false,true,false,false,false,true,false],
                 [false,false,false,true,false,false,true,false,false,false,false,true,false,false,true,false],
                 [false,false,true,false,false,false,true,false,false,false,true,false,false,false,true,false],
-                [false,false,true,false,false,false,true,false,false,false,true,false,false,false,true,false],
-                [false,false,true,false,false,false,true,false,false,false,true,false,false,false,true,false],
+                [false,false,false,false,true,false,false,false,false,false,false,false,true,false,false,false],
+                [true,false,false,false,true,false,false,false,true,false,false,false,true,false,false,false],
             ],
             data:[],
             bpm:120,
@@ -85,12 +80,16 @@ class MainContent extends Component {
         this.midiSounds.setEchoLevel(.1);
     };
 
+    shouldComponentUpdate(nextProps, nextState) {
+        return !this.state.initialized
+    }
+
     handleVolumeChange(value){
         ""
     };
 
     playLoop(){
-        this.fillBeat();
+        this.fillBeat(this.state.tracks);
         this.resetAnimation();
         this.setNewAnimationBpm();
         this.midiSounds.startPlayLoop(this.beats, this.state.bpm, 1/16);
@@ -124,11 +123,13 @@ class MainContent extends Component {
         document.documentElement.style.setProperty("--anim8", "blinker");
     };
 
-    fillBeat(){
+    fillBeat(tracks){
+        let updated_tracks = tracks || this.state.tracks
+        let drums = this.state.drums
         for(let i=0;i<16;i++){
             let drums=[];
-            this.state.tracks.forEach((track, iter) => {
-                if(this.state.tracks[iter][i]){drums.push(this.state.drums[iter]);}
+            updated_tracks.forEach((track, iter) => {
+                if(updated_tracks[iter][i]){drums.push(this.state.drums[iter]);}
             });
             let beat=[drums,[]];
             
@@ -141,7 +142,8 @@ class MainContent extends Component {
 			if (!(this.items)) {
 				this.items = [];
 				for (let i = 0; i < this.midiSounds.player.loader.drumKeys().length; i++) {
-					this.items.push(<option key={i} value={i}>{'' + (i + 0) + '. ' + this.midiSounds.player.loader.drumInfo(i).title}</option>);
+					this.items.push(<option key={i} value={i}>{this.midiSounds.player.loader.drumInfo(i).title}</option>);
+					// this.items.push(<option key={i} value={i}>{'' + (i + 0) + '. ' + this.midiSounds.player.loader.drumInfo(i).title}</option>);
 				};
 			};
 			return this.items;
@@ -153,21 +155,19 @@ class MainContent extends Component {
         var n = list.options[list.selectedIndex].getAttribute("value");		
 		this.midiSounds.cacheDrum(n);
         var me=this;
-        let drums = this.state.drums
+        let drums = me.state.drums
         drums[iter]=n
+        this.state.drums = drums
 		this.midiSounds.player.loader.waitLoad(function(){
-			me.setState({
-				drums: drums
-			});
 			me.fillBeat();
 			});
 	};
 
     toggleDrum(track,step){
         let a=this.state.tracks;
-        a[track][step] = !a[track][step];
-        this.setState({tracks:a});
-        this.fillBeat();
+        a[track][step] = !a[track][step]
+        this.state.tracks = a
+        this.fillBeat(a);
     };
 
     echoToggle(){
@@ -175,13 +175,13 @@ class MainContent extends Component {
     };
 
     setBpm(bpm){
-        this.setState({ bpm: bpm },this.playLoop);
+        this.state.bpm = bpm
+        this.playLoop()
     };
 
     
     render() {
         let selections = this.createSelectItems();
-
         return (
             <div className="main-container">
                 <Grid
