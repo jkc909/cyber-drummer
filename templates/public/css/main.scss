@@ -8,6 +8,12 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
+:focus {outline:none;}
+
+body {
+    background-color: black;
+}
+
 @font-face {
     font-family: 'digital-7';
     src: local('digital-7'), url(../fonts/digital-7.ttf) format('truetype');
@@ -42,11 +48,11 @@ div.hide-div {
 
 div.main-container {
     justify-content: center;
+    padding-top: 50px;
 }
 
 .drum-container-grid-items {
-    border-style: solid;
-    height: 50px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,11 +66,22 @@ div.main-container {
 
 
 
+
+.drum-button-container {
+
+}
+
+.drum-button-item {
+    color: white;
+    border-style: none,
+}
+
 .drum-container {
     display: grid;
     grid-template-columns: 1fr 610px 1fr;
     background-color: #070707;
 }
+
 
 .drum-container-item {
     grid-column-start: 1;
@@ -77,6 +94,19 @@ div.main-container {
     display: grid;
     grid-template-columns: 1fr;
 }
+
+.drum-selector-container > div:nth-child(even) {
+    background-color: #090909;
+}
+
+.drum-button-container > div:nth-child(even) {
+    background-color: #090909;
+}
+
+.total-sequence-wrapper > div:nth-child(even) {
+    background-color: #090909;
+}
+
 
 .drum-selector-item {
     grid-column-start: 1;
@@ -93,9 +123,14 @@ div.main-container {
     grid-column-end: 16;
 }
 
+.total-sequence-wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
 .trigs {
     overflow: hidden;
-    background-color: green;
+    
 }
 
 
