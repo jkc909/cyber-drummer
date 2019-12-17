@@ -13,7 +13,7 @@ const theme = createMuiTheme({
           "&$selected": {
             backgroundColor: "#ff00fc",
             "&:hover": {
-              backgroundColor: "#ff00fc6b",
+              backgroundColor: "#a0044c",
             }
           },
           '&:focus': {

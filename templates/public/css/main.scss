@@ -4,6 +4,7 @@
 @font-face {
     font-family: 'digital-7';
     src: local('digital-7'), url(../fonts/digital-7.ttf) format('truetype');
+    src: local('Orbitron'), url(../fonts/Orbitron-regular.ttf) format('truetype');
   }
 
 
@@ -45,7 +46,7 @@ div.main-container {
 }
 
 .drum-container-grid-items {
-    height: 65px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;

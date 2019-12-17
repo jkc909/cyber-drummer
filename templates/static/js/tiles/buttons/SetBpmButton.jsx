@@ -41,7 +41,7 @@ const SetBpmButton = props => {
   return (
     <div>
       <ColorButton variant="contained" color="primary" disabled={props.disabled} className={classes.margin} onClick={props.handleBpmButton}>
-        Set New Tempo
+        Set New BPM
       </ColorButton>
     </div>
   );

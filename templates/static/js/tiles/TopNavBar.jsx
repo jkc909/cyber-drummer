@@ -19,6 +19,7 @@ const useStyles = makeStyles(theme => ({
     },
     title: {
       flexGrow: 1,
+      fontFamily: "Orbitron",
     },
   }));
 
@@ -27,7 +28,7 @@ const useStyles = makeStyles(theme => ({
   
     return (
         <div className={classes.root}>
-            <AppBar position="static">
+            <AppBar position="static" style={{backgroundColor: '#090112', height: '56px'}}>
                 <Toolbar>
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         <MenuIcon />
