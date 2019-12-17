@@ -183,7 +183,6 @@ class MainContent extends Component {
                     justify="center"
                     alignItems="center"
                 >
-                    <div>
                         <DrumContainer 
                             tracks={this.state.tracks}
                             drums={this.state.drums}
@@ -197,7 +196,7 @@ class MainContent extends Component {
                             bpm={this.state.bpm}
                             setBpm={this.setBpm}
                         />
-                    </div>
+                    
                 </Grid>
                 <div>
                     <div className="hide-div">

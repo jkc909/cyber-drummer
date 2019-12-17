@@ -1,5 +1,5 @@
 import React from 'react';
-import { createMuiTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
@@ -26,6 +26,9 @@ const ColorButton = withStyles(theme => ({
       border: "1px solid #262c3d",
       animation: "none",
       },
+    '&:focus': {
+      outline: "none",
+    }
   },
 }))(Button);
 
