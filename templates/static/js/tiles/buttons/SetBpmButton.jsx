@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 
 const ColorButton = withStyles(theme => ({
   root: {
-    width: "96px",
+    width: "100px",
     height: "55px",
     padding: "1px 9px",
     backgroundColor: "black",

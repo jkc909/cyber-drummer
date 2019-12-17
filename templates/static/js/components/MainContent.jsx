@@ -90,22 +90,19 @@ class MainContent extends Component {
     };
 
     playLoop(){
-        let bpm = this.state.bpm;
-        let bps = 60/bpm;
-        
         this.fillBeat();
-        document.documentElement.style.setProperty("--anim8-time", `${bps}s`);
-        document.documentElement.style.setProperty("--anim8-time-seq", `${bps*4}s`);
-        for(let i=1;i<17;i++) {
-            document.documentElement.style.setProperty(`--seq-${i}`, `${(i-1) * (bps/4)}s` );
-        }
-        document.documentElement.style.setProperty("--anim8", "blinker");
-        this.midiSounds.startPlayLoop(this.beats, bpm, 1/16);
-    }
+        this.resetAnimation();
+        this.setNewAnimationBpm();
+        this.midiSounds.startPlayLoop(this.beats, this.state.bpm, 1/16);
+    };
 
     stopLoop(){
+        this.resetAnimation();
+        this.midiSounds.stopPlayLoop();
+    };
+
+    resetAnimation(){
         let oldone = document.querySelector("div.tempo-blink");
-    
         let newone = oldone.cloneNode(true);
         oldone.parentNode.replaceChild(newone, oldone);
         let oldsteps = document.querySelectorAll("div.seq-step");
@@ -114,7 +111,17 @@ class MainContent extends Component {
             s.parentNode.replaceChild(node,s);
         });
         document.documentElement.style.setProperty("--anim8", "none");
-        this.midiSounds.stopPlayLoop();
+    };
+
+    setNewAnimationBpm(){
+        let bpm = this.state.bpm;
+        let bps = 60/bpm;
+        document.documentElement.style.setProperty("--anim8-time", `${bps}s`);
+        document.documentElement.style.setProperty("--anim8-time-seq", `${bps*4}s`);
+        for(let i=1;i<17;i++) {
+            document.documentElement.style.setProperty(`--seq-${i}`, `${(i-1) * (bps/4)}s` );
+        };
+        document.documentElement.style.setProperty("--anim8", "blinker");
     };
 
     fillBeat(){
