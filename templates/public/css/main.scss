@@ -4,6 +4,7 @@
 @font-face {
     font-family: 'digital-7';
     src: local('digital-7'), url(../fonts/digital-7.ttf) format('truetype');
+    src: local('Orbitron'), url(../fonts/Orbitron-regular.ttf) format('truetype');
   }
 
 
@@ -41,7 +42,7 @@ div.hide-div {
 
 div.main-container {
     justify-content: center;
-    padding-top: 50px;
+    padding-top: 20px;
 }
 
 .drum-container-grid-items {
@@ -58,7 +59,7 @@ div.main-container {
 
 .drum-container {
     display: grid;
-    grid-template-columns: 165px 610px 165px;
+    grid-template-columns: 200px 650px 200px;
     background-color: var(--main-background);
 }
 
@@ -76,7 +77,7 @@ div.main-container {
 }
 
 .drum-selector-item > select {
-    width: 150px;
+    width: 175px;
 }
 
 .drum-selector-container > div:nth-child(even) {
@@ -159,10 +160,10 @@ div.transport-container {
     animation: var(--anim8) var(--anim8-time) infinite;
     border-radius: 50%;
     color: #d4d4d4;
-    height: 45px;
-    width: 45px;
-    padding-top: 20%;
-    padding-left: 11%;
+    height: 55px;
+    width: 55px;
+    padding-top: 25%;
+    padding-left: 12%;
     border-style: double;
     border-color: red;
 }

@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 
 const ColorButton = withStyles(theme => ({
   root: {
-    width: "96px",
+    width: "100px",
     height: "55px",
     padding: "1px 9px",
     backgroundColor: "black",
@@ -41,7 +41,7 @@ const SetBpmButton = props => {
   return (
     <div>
       <ColorButton variant="contained" color="primary" disabled={props.disabled} className={classes.margin} onClick={props.handleBpmButton}>
-        Set New Tempo
+        Set New BPM
       </ColorButton>
     </div>
   );

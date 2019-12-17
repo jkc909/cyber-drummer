@@ -31,6 +31,10 @@ class Home extends Component {
                 '@global': {
                   body: {
                     backgroundColor: 'black',
+                    fontFamily: 'Orbitron',
+                  },
+                  '.MuiButton-label': {
+                    fontFamily: 'Orbitron',
                   },
                 },
               },

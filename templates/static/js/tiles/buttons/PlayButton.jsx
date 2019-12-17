@@ -6,7 +6,7 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
 const ColorButton = withStyles(theme => ({
   root: {
-    width: "100px",
+    width: "112px",
     height: "50px",
     fontSize: "20px",
     padding: "1px 9px",
