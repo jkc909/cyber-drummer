@@ -160,9 +160,7 @@ class MainContent extends Component {
 			});
 	};
 
-    toggleDrum(track,step){
-        let a=this.state.tracks;
-        a[track][step] = !a[track][step]
+    toggleDrum(a){
         this.state.tracks = a
         this.fillBeat();
     };

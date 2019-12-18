@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 
 import DrumSelectors from './DrumSelectors.jsx'
 import DrumControls from './DrumControls.jsx'
+import DrumSequencer from './DrumSequencer'
 import TrigButton from '../tiles/buttons/TrigButton'
 
 const DrumContainer = props => {
@@ -65,17 +66,18 @@ const DrumContainer = props => {
     
     return(
         <div className="drum-container ">
-            <Fragment>
-                <div className="drum-selector-container drum-container-grid">
-                    {drum_selectors}
-                </div>
-                <div className="total-sequence-wrapper drum-container-grid">
-                    {full_trigs_container}
-                </div>
-                <div className="drum-selector-container drum-container-grid">
-                    {drum_buttons}
-                </div>
-            </Fragment>
+            <div className="drum-selector-container drum-container-grid">
+                {drum_selectors}
+            </div>
+            <div className="total-sequence-wrapper drum-container-grid">
+            <DrumSequencer 
+                tracks={props.tracks}
+                toggleDrum={props.toggleDrum}
+            />
+            </div>
+            <div className="drum-selector-container drum-container-grid">
+                {drum_buttons}
+            </div>
         </div>
     )
 }

@@ -15,7 +15,6 @@ class DrumSelectors extends Component {
 
     render() {
 
-console.log("YO I RENDERD BRO")
         return(
             <div className="drum-selector-item drum-container-grid-items" key={this.props.iter}>
                 <select className="drum-selector" value={this.state.selected} onChange={(e) => this.drumSelectHandler(e,this.props.iter)}>{this.props.selections}</select>
