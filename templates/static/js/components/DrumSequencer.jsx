@@ -55,7 +55,6 @@ class DrumSequencer extends Component {
                 </div>
             )
         });
-
         return (
             <Fragment>
                 {full_trigs_container}

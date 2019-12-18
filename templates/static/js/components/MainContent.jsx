@@ -123,7 +123,7 @@ class MainContent extends Component {
         document.documentElement.style.setProperty("--anim8", "blinker");
     };
 
-    fillBeat(tracks){
+    fillBeat(){
         for(let i=0;i<16;i++){
             let drums=[];
             this.state.tracks.forEach((track, iter) => {
