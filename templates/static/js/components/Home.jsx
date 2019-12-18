@@ -31,6 +31,9 @@ class Home extends Component {
                 '@global': {
                   body: {
                     backgroundColor: 'black',
+                    backgroundImage: 'url("/public/images/synthwave3.jpg")',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover',
                     fontFamily: 'Orbitron',
                   },
                   '.MuiButton-label': {
