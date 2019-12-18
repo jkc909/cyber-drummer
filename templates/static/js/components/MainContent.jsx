@@ -49,7 +49,7 @@ class MainContent extends Component {
         super(props);
         this.state = {
             drums: [160,168,199,99,66,35,17,2],
-            drum_volumes: [.07,.07,.07,.07,.07,.07,.07,.07,.07],
+            drum_volumes: [.7,.7,.7,.7,.7,.7,.7,.7,.7],
             hit:56,
             bass:437, 
             synth:521,
@@ -73,6 +73,7 @@ class MainContent extends Component {
         this.stopLoop = this.stopLoop.bind(this);
         this.toggleDrum = this.toggleDrum.bind(this);
         this.onSelectInstrument = this.onSelectInstrument.bind(this);
+        this.handleVolumeChange=this.handleVolumeChange.bind(this)
     };
 
     componentDidMount(){
@@ -84,9 +85,9 @@ class MainContent extends Component {
         return !this.state.initialized
     }
 
-    handleVolumeChange(instrument,volume){
-        debugger;
-        this.midiSounds.setDrumVolume(instrument,volume)
+    handleVolumeChange(instrument,volume,drum_volumes){
+        this.state.drum_volumes=drum_volumes
+        this.midiSounds.setDrumVolume(this.state.drums[instrument],volume)
     };
 
     playLoop(){

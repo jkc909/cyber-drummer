@@ -45,7 +45,7 @@ const MuteButton = props => {
         variant="contained" 
         color="primary" 
         className={classes.margin}
-        onClick={(e => {})}
+        onClick={e => (props.handleMuteButton(e,props.iter))}
     >
         M
       </ColorButton>

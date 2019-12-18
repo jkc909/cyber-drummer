@@ -34,6 +34,7 @@ const DrumContainer = props => {
             <div className="drum-controls-wrapper drum-container-grid">
             <DrumControls 
                 drums={props.drums}
+                drum_volumes={props.drum_volumes}
                 handleVolumeChange={props.handleVolumeChange}
             />
             </div>
