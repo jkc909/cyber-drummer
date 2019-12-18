@@ -57,22 +57,31 @@ div.main-container {
 }
 
 
+.drum-controls-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
 .drum-controls-grid-container {
     display: inline-grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas: 
         "button button button button"
         "slider slider slider slider";
+    border: 1px solid white;
 }
 
 .drum-controls-button-item {
     color: white;
     border-style: none;
-    grid-area: button;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .drum-controls-slider-item{
     grid-area: slider;
+    text-align: center;
 }
 
 .drum-container {
