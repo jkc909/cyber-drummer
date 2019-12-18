@@ -1,5 +1,8 @@
 import React, { Component, Fragment } from 'react';
 
+import MuteButton from '../tiles/buttons/MuteButton.jsx'
+import SoloButton from '../tiles/buttons/SoloButton.jsx'
+
 class DrumControls extends Component {
     constructor(props) {
         super(props);
@@ -13,10 +16,10 @@ class DrumControls extends Component {
             drum_buttons.push(
                 <div className="drum-controls-grid-container drum-container-grid-items" key={i}>
                     <div className="drum-controls-button-item">
-                        Mute
+                        <MuteButton />
                     </div>
                     <div className="drum-controls-button-item">
-                        Solo
+                        <SoloButton />
                     </div>
                     <div className="drum-controls-button-item">
                         Clear
