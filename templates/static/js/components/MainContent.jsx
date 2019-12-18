@@ -89,7 +89,7 @@ class MainContent extends Component {
     };
 
     playLoop(){
-        this.fillBeat(this.state.tracks);
+        this.fillBeat();
         this.resetAnimation();
         this.setNewAnimationBpm();
         this.midiSounds.startPlayLoop(this.beats, this.state.bpm, 1/16);
@@ -124,15 +124,12 @@ class MainContent extends Component {
     };
 
     fillBeat(tracks){
-        let updated_tracks = tracks || this.state.tracks
-        let drums = this.state.drums
         for(let i=0;i<16;i++){
             let drums=[];
-            updated_tracks.forEach((track, iter) => {
-                if(updated_tracks[iter][i]){drums.push(this.state.drums[iter]);}
+            this.state.tracks.forEach((track, iter) => {
+                if(this.state.tracks[iter][i]){drums.push(this.state.drums[iter]);}
             });
             let beat=[drums,[]];
-            
             this.beats[i]=beat;
         };
     };
@@ -167,7 +164,7 @@ class MainContent extends Component {
         let a=this.state.tracks;
         a[track][step] = !a[track][step]
         this.state.tracks = a
-        this.fillBeat(a);
+        this.fillBeat();
     };
 
     echoToggle(){

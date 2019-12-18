@@ -4,15 +4,19 @@
 @font-face {
     font-family: 'digital-7';
     src: local('digital-7'), url(../fonts/digital-7.ttf) format('truetype');
-    src: local('Orbitron'), url(../fonts/Orbitron-regular.ttf) format('truetype');
   }
+
+@font-face {
+    font-family: 'Orbitron';
+    src: local('Orbitron'), url(../fonts/Orbitron-regular.ttf) format('truetype');
+}
 
 
 html {
     --main-background: #070707;
     --zebra-stripe: #090909;
-    --sequencer-border: #00805d59;
-    --sequencer-border-beat: #00805dc2;
+    --sequencer-border: #a764e6a4;
+    --sequencer-border-beat: #bd90e6c2;
 }
 
 body {background-color: black;}

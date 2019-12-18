@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react';
 
+import DrumSelectors from './DrumSelectors.jsx'
+import DrumControls from './DrumControls.jsx'
 import TrigButton from '../tiles/buttons/TrigButton'
 
 const DrumContainer = props => {
-    
-    
     let leds = []
     for(let i=0;i<16;i++){
         leds.push(
@@ -37,9 +37,13 @@ const DrumContainer = props => {
         })
         sequence.push(track)
         drum_selectors.push(
-            <div className="drum-selector-item drum-container-grid-items" key={iter}>
-                <select className="drum-selector" value={props.drums[iter]} onChange={(e) => props.onSelectInstrument(e,iter)}>{props.selections}</select>
-            </div>
+            <DrumSelectors 
+                key={iter}
+                iter={iter}
+                selected={props.drums[iter]}
+                onSelectInstrument={props.onSelectInstrument}
+                selections={props.selections}
+            />
         )
         drum_buttons.push(
             <div className="drum-button-item drum-container-grid-items" key={iter}>
