@@ -56,9 +56,23 @@ div.main-container {
     align-items: center;
 }
 
-.drum-button-item {
+
+.drum-controls-grid-container {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "button button button button"
+        "slider slider slider slider";
+}
+
+.drum-controls-button-item {
     color: white;
-    border-style: none,
+    border-style: none;
+    grid-area: button;
+}
+
+.drum-controls-slider-item{
+    grid-area: slider;
 }
 
 .drum-container {
@@ -108,7 +122,7 @@ div.main-container {
 }
 
 .sequence-container > div:nth-child(4n+1) {
-    border: 1px solid var(--sequencer-border-beat);
+    border: 2px solid var(--sequencer-border-beat);
 }
 
 .total-sequence-wrapper > div:nth-child(2) > div:first-child {
