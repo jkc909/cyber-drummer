@@ -39,6 +39,13 @@ const useStyles = makeStyles(theme => ({
 const MuteButton = props => {
   const classes = useStyles();
 
+
+  let disabled = false
+  if(props.solostate){
+      disabled=true
+  }
+
+
   return (
     <div>
       <ColorButton 
@@ -46,6 +53,7 @@ const MuteButton = props => {
         color="primary" 
         className={classes.margin}
         onClick={e => (props.handleMuteButton(e,props.iter))}
+        disabled={disabled}
     >
         M
       </ColorButton>

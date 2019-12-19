@@ -73,7 +73,8 @@ class MainContent extends Component {
         this.stopLoop = this.stopLoop.bind(this);
         this.toggleDrum = this.toggleDrum.bind(this);
         this.onSelectInstrument = this.onSelectInstrument.bind(this);
-        this.handleVolumeChange=this.handleVolumeChange.bind(this)
+        this.handleVolumeChange=this.handleVolumeChange.bind(this);
+        this.handleVolumeState=this.handleVolumeState.bind(this);
     };
 
     componentDidMount(){
@@ -85,10 +86,13 @@ class MainContent extends Component {
         return !this.state.initialized
     }
 
-    handleVolumeChange(instrument,volume,drum_volumes){
-        this.state.drum_volumes=drum_volumes
+    handleVolumeChange(instrument,volume){
         this.midiSounds.setDrumVolume(this.state.drums[instrument],volume)
     };
+    
+    handleVolumeState(drum_volumes) {
+        this.state.drum_volumes=drum_volumes
+    }
 
     playLoop(){
         this.fillBeat();
@@ -195,6 +199,7 @@ class MainContent extends Component {
                         selections={selections}
                         drum_volumes={this.state.drum_volumes}
                         handleVolumeChange={this.handleVolumeChange}
+                        handleVolumeState={this.handleVolumeState}
 
                     />
                     <TransportContainer 

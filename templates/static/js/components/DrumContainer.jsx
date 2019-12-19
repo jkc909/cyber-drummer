@@ -36,6 +36,7 @@ const DrumContainer = props => {
                 drums={props.drums}
                 drum_volumes={props.drum_volumes}
                 handleVolumeChange={props.handleVolumeChange}
+                handleVolumeState={props.handleVolumeState}
             />
             </div>
         </div>

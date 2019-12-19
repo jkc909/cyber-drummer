@@ -176,6 +176,15 @@ border: 1px solid var(--sequencer-border);
 .trigs {overflow: hidden;}
 
 
+.muted{
+    background-color: red;
+}
+
+.soloed{
+    background-color: orange;
+}
+
+
 div.transport-container {
     background-color: var(--main-background);
     width: 330px;

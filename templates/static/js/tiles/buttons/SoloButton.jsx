@@ -37,6 +37,11 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const SoloButton = props => {
+    debugger;
+    let disabled = false
+    if((props.solostate!="" && props.solostate=='not-soloed') || props.muted){
+        disabled=true
+    }
   const classes = useStyles();
 
   return (
@@ -45,7 +50,8 @@ const SoloButton = props => {
         variant="contained" 
         color="primary" 
         className={classes.margin}
-        onClick={e => ("")}
+        onClick={e => (props.handleSoloButton(e,props.iter))}
+        disabled={disabled}
     >
         S
       </ColorButton>
