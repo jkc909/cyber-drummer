@@ -57,28 +57,43 @@ div.main-container {
 }
 
 
+.drum-controls-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-right: 12px;
+}
+
 .drum-controls-grid-container {
     display: inline-grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 45px 45px 1fr 1fr;
     grid-template-areas: 
-        "button button button button"
-        "slider slider slider slider";
+        "button button slider slider";
+    border: 1px solid #6d4296;
 }
 
 .drum-controls-button-item {
     color: white;
     border-style: none;
-    grid-area: button;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .drum-controls-slider-item{
     grid-area: slider;
+    text-align: center;
+}
+
+.drum-volume-slider{
+    width: 100px;
 }
 
 .drum-container {
     display: grid;
-    grid-template-columns: 200px 650px 200px;
+    grid-template-columns: 220px 650px 220px;
     background-color: var(--main-background);
+    padding-bottom: 12px;
+    border-radius: 15px;
 }
 
 
@@ -92,6 +107,7 @@ div.main-container {
 .drum-selector-container {
     display: grid;
     grid-template-columns: 1fr;
+    padding-left: 12px;
 }
 
 .drum-selector-item > select {
@@ -114,6 +130,7 @@ div.main-container {
 .drum-selector-item {
     grid-column-start: 1;
     grid-column-end: 1;
+    border: 1px solid #6c4296;
 }
 
 .sequence-container {
@@ -125,21 +142,22 @@ div.main-container {
     border: 2px solid var(--sequencer-border-beat);
 }
 
-.total-sequence-wrapper > div:nth-child(2) > div:first-child {
+.drum-selector-container > div:nth-child(2) {
     border-top-left-radius: 5px;
 }
 
-.total-sequence-wrapper > div:nth-child(2) > div:last-child {
+.drum-controls-wrapper > div:nth-child(2) {
     border-top-right-radius: 5px;
 }
 
-.total-sequence-wrapper > div:last-child > div:first-child {
+.drum-selector-container > div:last-child {
     border-bottom-left-radius: 5px;
 }
 
-.total-sequence-wrapper > div:last-child > div:last-child {
+.drum-controls-wrapper > div:last-child {
     border-bottom-right-radius: 5px;
 }
+
 
 .sequence-container > div:nth-child(n+2):nth-child(-n+4),
 .sequence-container > div:nth-child(n+6):nth-child(-n+8),
@@ -165,6 +183,15 @@ border: 1px solid var(--sequencer-border);
 }
 
 .trigs {overflow: hidden;}
+
+
+.muted{
+    background-color: red;
+}
+
+.soloed{
+    background-color: blue;
+}
 
 
 div.transport-container {

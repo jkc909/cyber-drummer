@@ -49,6 +49,7 @@ class MainContent extends Component {
         super(props);
         this.state = {
             drums: [160,168,199,99,66,35,17,2],
+            drum_volumes: [.7,.7,.7,.7,.7,.7,.7,.7,.7],
             hit:56,
             bass:437, 
             synth:521,
@@ -64,7 +65,6 @@ class MainContent extends Component {
             ],
             data:[],
             bpm:120,
-            volumes: [.07,.07,.07],
             
         };
         this.beats=[];
@@ -73,6 +73,8 @@ class MainContent extends Component {
         this.stopLoop = this.stopLoop.bind(this);
         this.toggleDrum = this.toggleDrum.bind(this);
         this.onSelectInstrument = this.onSelectInstrument.bind(this);
+        this.handleVolumeChange=this.handleVolumeChange.bind(this);
+        this.handleVolumeState=this.handleVolumeState.bind(this);
     };
 
     componentDidMount(){
@@ -84,9 +86,13 @@ class MainContent extends Component {
         return !this.state.initialized
     }
 
-    handleVolumeChange(value){
-        ""
+    handleVolumeChange(instrument,volume){
+        this.midiSounds.setDrumVolume(this.state.drums[instrument],volume)
     };
+    
+    handleVolumeState(drum_volumes) {
+        this.state.drum_volumes=drum_volumes
+    }
 
     playLoop(){
         this.fillBeat();
@@ -185,20 +191,23 @@ class MainContent extends Component {
                     justify="center"
                     alignItems="center"
                 >
-                        <DrumContainer 
-                            tracks={this.state.tracks}
-                            drums={this.state.drums}
-                            toggleDrum={this.toggleDrum}
-                            onSelectInstrument={this.onSelectInstrument}
-                            selections={selections}
-                        />
-                        <TransportContainer 
-                            playLoop={this.playLoop}
-                            stopLoop={this.stopLoop}
-                            bpm={this.state.bpm}
-                            setBpm={this.setBpm}
-                        />
-                    
+                    <DrumContainer 
+                        tracks={this.state.tracks}
+                        drums={this.state.drums}
+                        toggleDrum={this.toggleDrum}
+                        onSelectInstrument={this.onSelectInstrument}
+                        selections={selections}
+                        drum_volumes={this.state.drum_volumes}
+                        handleVolumeChange={this.handleVolumeChange}
+                        handleVolumeState={this.handleVolumeState}
+
+                    />
+                    <TransportContainer 
+                        playLoop={this.playLoop}
+                        stopLoop={this.stopLoop}
+                        bpm={this.state.bpm}
+                        setBpm={this.setBpm}
+                    />
                 </Grid>
                 <div>
                     <div className="hide-div">
