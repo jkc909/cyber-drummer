@@ -23,7 +23,7 @@ class DrumControls extends Component {
         if(!mutes[iter]) {
             this.props.handleVolumeChange(iter,this.state.drum_volumes[iter]);
         } else {
-            this.props.handleVolumeChange(iter,0.001);
+            this.props.handleVolumeChange(iter,0.0001);
         };
         this.props.handleVolumeState(mutes); // this is wrong
         this.setState({ muted: mutes });
@@ -39,7 +39,7 @@ class DrumControls extends Component {
         } else {
             this.state.drum_volumes.forEach((v, i) => {
                 if(i!=iter){
-                    this.props.handleVolumeChange(i,0.001);
+                    this.props.handleVolumeChange(i,0.0001);
                 };
             });
             this.setState({ solo: iter })
@@ -89,12 +89,6 @@ class DrumControls extends Component {
                             muted={this.state.muted[i]}
                             solostate={solostate}
                         />
-                    </div>
-                    <div className="drum-controls-button-item">
-                        Clear
-                    </div>
-                    <div className="drum-controls-button-item">
-                        Rand
                     </div>
                     <div className="drum-controls-slider-item">
                         <DrumVolumeControl 

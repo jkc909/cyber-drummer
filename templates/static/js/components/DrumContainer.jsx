@@ -6,7 +6,7 @@ import DrumSequencer from './DrumSequencer'
 
 const DrumContainer = props => {
 
-    let drum_selectors = [<div className="drum-selector-item drum-container-grid-items" key="blank"></div>]
+    let drum_selectors = [<div className="drum-container-grid-items" key="blank"></div>]
 
     props.tracks.forEach ((t,i) => {
         drum_selectors.push(
@@ -17,8 +17,8 @@ const DrumContainer = props => {
                 onSelectInstrument={props.onSelectInstrument}
                 selections={props.selections}
             />
-        )
-    })
+        );
+    });
     
     return(
         <div className="drum-container ">

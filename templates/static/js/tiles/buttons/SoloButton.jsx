@@ -11,7 +11,7 @@ const ColorButton = withStyles(theme => ({
     padding: "0px",
     backgroundColor: "black",
     border: "1px outset blue",
-    boxShadow: "0 0 15px blue",
+    boxShadow: "0 0 5px blue",
     textShadow: "0 0 10px blue",
     color: "blue",
     '&:hover': {
