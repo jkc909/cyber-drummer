@@ -49,6 +49,15 @@ div.main-container {
     padding-top: 20px;
 }
 
+.bottom-container-grid {
+    display: inline-grid;
+    grid-template-columns: 330px 500px;
+}
+
+.equalizer-container {
+    background-color: green;
+}
+
 .drum-container-grid-items {
     height: 60px;
     display: flex;
@@ -196,7 +205,6 @@ border: 1px solid var(--sequencer-border);
 
 div.transport-container {
     background-color: var(--main-background);
-    width: 330px;
     padding: 6px;
 }
 

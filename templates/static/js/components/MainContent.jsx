@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 
 import DrumContainer from './DrumContainer.jsx'
 import TransportContainer from './TransportContainer.jsx'
+import EqualizerContainer from './EqualizerContainer.jsx'
 
 const O = 12;
 
@@ -202,12 +203,17 @@ class MainContent extends Component {
                         handleVolumeState={this.handleVolumeState}
 
                     />
-                    <TransportContainer 
-                        playLoop={this.playLoop}
-                        stopLoop={this.stopLoop}
-                        bpm={this.state.bpm}
-                        setBpm={this.setBpm}
-                    />
+                    <div className="bottom-container-grid">
+                        <TransportContainer 
+                            playLoop={this.playLoop}
+                            stopLoop={this.stopLoop}
+                            bpm={this.state.bpm}
+                            setBpm={this.setBpm}
+                        />
+                        <EqualizerContainer 
+                            
+                        />
+                    </div>
                 </Grid>
                 <div>
                     <div className="hide-div">
