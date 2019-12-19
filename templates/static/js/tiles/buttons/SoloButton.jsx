@@ -37,7 +37,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const SoloButton = props => {
-    debugger;
     let disabled = false
     if((props.solostate!="" && props.solostate=='not-soloed') || props.muted){
         disabled=true

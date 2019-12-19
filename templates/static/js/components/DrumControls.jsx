@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 
 import MuteButton from '../tiles/buttons/MuteButton.jsx'
 import SoloButton from '../tiles/buttons/SoloButton.jsx'
+import DrumVolumeControl from './DrumVolumeControl.jsx'
 
 class DrumControls extends Component {
     constructor(props) {
@@ -13,6 +14,7 @@ class DrumControls extends Component {
         };
         this.handleMuteButton=this.handleMuteButton.bind(this);
         this.handleSoloButton=this.handleSoloButton.bind(this);
+        this.handleVolumeSlider=this.handleVolumeSlider.bind(this);
     };
 
     handleMuteButton(e, iter) {
@@ -43,6 +45,11 @@ class DrumControls extends Component {
             this.setState({ solo: iter })
         };
     };
+
+    handleVolumeSlider(iter, vol) {
+        this.state.drum_volumes[iter]=vol
+        this.props.handleVolumeChange(iter,vol)
+    }
 
     
     render() {
@@ -90,7 +97,13 @@ class DrumControls extends Component {
                         Rand
                     </div>
                     <div className="drum-controls-slider-item">
-                        <input type="range" min="1" max="100" defaultValue="50" className="slider" id="myRange" />
+                        <DrumVolumeControl 
+                            handleVolumeSlider={this.handleVolumeSlider}
+                            iter={i}
+                            muted={this.state.muted[i]}
+                            solostate={solostate}
+                            volume={this.state.drum_volumes[i]}
+                        />
                     </div>
                 </div>
             );

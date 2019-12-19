@@ -60,6 +60,7 @@ div.main-container {
 .drum-controls-wrapper {
     display: grid;
     grid-template-columns: 1fr;
+    padding-right: 12px;
 }
 
 .drum-controls-grid-container {
@@ -88,6 +89,8 @@ div.main-container {
     display: grid;
     grid-template-columns: 200px 650px 200px;
     background-color: var(--main-background);
+    padding-bottom: 12px;
+    border-radius: 15px;
 }
 
 
@@ -181,7 +184,7 @@ border: 1px solid var(--sequencer-border);
 }
 
 .soloed{
-    background-color: orange;
+    background-color: blue;
 }
 
 
