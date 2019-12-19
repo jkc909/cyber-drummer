@@ -66,6 +66,7 @@ class MainContent extends Component {
             ],
             data:[],
             bpm:120,
+            eq_values: [10,-3,13,0,10,9,10,20],
             
         };
         this.beats=[];
@@ -211,7 +212,7 @@ class MainContent extends Component {
                             setBpm={this.setBpm}
                         />
                         <EqualizerContainer 
-                            
+                            eq_values={this.state.eq_values}
                         />
                     </div>
                 </Grid>
