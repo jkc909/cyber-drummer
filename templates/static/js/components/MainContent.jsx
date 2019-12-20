@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 
 import DrumContainer from './DrumContainer.jsx'
 import TransportContainer from './TransportContainer.jsx'
+import EqualizerContainer from './EqualizerContainer.jsx'
 
 const O = 12;
 
@@ -49,7 +50,7 @@ class MainContent extends Component {
         super(props);
         this.state = {
             drums: [160,168,199,99,66,35,17,2],
-            drum_volumes: [.7,.7,.7,.7,.7,.7,.7,.7,.7],
+            drum_volumes: [.7,.7,.7,.7,.7,.7,.7,.7],
             hit:56,
             bass:437, 
             synth:521,
@@ -65,6 +66,7 @@ class MainContent extends Component {
             ],
             data:[],
             bpm:120,
+            eq_values: [10,-3,13,0,10,9,10,20,10,-3],
             
         };
         this.beats=[];
@@ -75,10 +77,21 @@ class MainContent extends Component {
         this.onSelectInstrument = this.onSelectInstrument.bind(this);
         this.handleVolumeChange=this.handleVolumeChange.bind(this);
         this.handleVolumeState=this.handleVolumeState.bind(this);
+        this.handleEqSlider=this.handleEqSlider.bind(this);
     };
 
     componentDidMount(){
         this.setState({ initialized: true });
+        this.midiSounds.setBand32(this.state.eq_values[0]);
+		this.midiSounds.setBand64(this.state.eq_values[1]);
+		this.midiSounds.setBand128(this.state.eq_values[2]);
+		this.midiSounds.setBand256(this.state.eq_values[3]);
+		this.midiSounds.setBand512(this.state.eq_values[4]);
+		this.midiSounds.setBand1k(this.state.eq_values[5]);
+		this.midiSounds.setBand2k(this.state.eq_values[6]);
+		this.midiSounds.setBand4k(this.state.eq_values[7]);
+		this.midiSounds.setBand8k(this.state.eq_values[8]);
+		this.midiSounds.setBand16k(this.state.eq_values[9]);
         this.midiSounds.setEchoLevel(.1);
     };
 
@@ -180,6 +193,19 @@ class MainContent extends Component {
         this.playLoop()
     };
 
+    handleEqSlider(values) {
+        this.midiSounds.setBand32(values[0]);
+		this.midiSounds.setBand64(values[1]);
+		this.midiSounds.setBand128(values[2]);
+		this.midiSounds.setBand256(values[3]);
+		this.midiSounds.setBand512(values[4]);
+		this.midiSounds.setBand1k(values[5]);
+		this.midiSounds.setBand2k(values[6]);
+		this.midiSounds.setBand4k(values[7]);
+		this.midiSounds.setBand8k(values[8]);
+		this.midiSounds.setBand16k(values[9]);
+    }
+
     
     render() {
         let selections = this.createSelectItems();
@@ -202,12 +228,28 @@ class MainContent extends Component {
                         handleVolumeState={this.handleVolumeState}
 
                     />
-                    <TransportContainer 
-                        playLoop={this.playLoop}
-                        stopLoop={this.stopLoop}
-                        bpm={this.state.bpm}
-                        setBpm={this.setBpm}
-                    />
+                    <div className="bottom-container-grid">
+                        <TransportContainer 
+                            playLoop={this.playLoop}
+                            stopLoop={this.stopLoop}
+                            bpm={this.state.bpm}
+                            setBpm={this.setBpm}
+                        />
+                        <EqualizerContainer 
+                            eq_values={this.state.eq_values}
+                            handleEqSlider={this.handleEqSlider}
+                        />
+                        <div className="master-volume">
+                            <div>
+                                <input className='eq-slider' type="range" min={0} max={100} value={50} onChange={e=>(e)}></input>
+                            </div>
+                            <div>
+                                <input className='eq-slider' type="range" min={0} max={100} value={50} onChange={e=>(e)}></input>
+                            </div>
+                            <div>Master Reverb</div>
+                            <div>Master Volume</div>
+                        </div>
+                    </div>
                 </Grid>
                 <div>
                     <div className="hide-div">
