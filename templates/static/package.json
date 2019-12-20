@@ -18,6 +18,7 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.3.0",
+    "google-charts": "^2.0.0",
     "midi-sounds-react": "^1.2.45",
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.13.0",
@@ -34,11 +35,13 @@
     "@material-ui/lab": "^4.0.0-alpha.35",
     "fibers": "^4.0.2",
     "history": "^4.10.1",
+    "react-google-charts": "^3.0.15",
     "react-modal": "^3.11.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.3.0",
     "sass": "^1.23.7",
     "typeface-roboto": "0.0.75",
-    "typescript": "^3.7.3"
+    "typescript": "^3.7.3",
+    "yarn": "^1.21.1"
   }
 }
