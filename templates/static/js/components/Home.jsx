@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 
@@ -13,17 +11,7 @@ class Home extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            
-        }
     }
-
-    componentDidMount(){
-
-    }
-
-    
-
     render() {
         const theme = createMuiTheme({
             overrides: {
@@ -48,10 +36,8 @@ class Home extends Component {
                 <ThemeProvider theme={theme}>
                     <CssBaseline />
                 </ThemeProvider>
-                {/* <Container fixed> */}
                     <TopNavBar />
                     <MainContent />
-                {/* </Container> */}
             </React.Fragment>
         );
     }
