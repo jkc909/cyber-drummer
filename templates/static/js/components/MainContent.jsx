@@ -13,8 +13,8 @@ class MainContent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            drums: [160,168,199,99,66,35,17,2],
-            drum_volumes: [.7,.7,.7,.7,.7,.7,.7,.7],
+            drums: [160,168,199,99,62,36,21,2],
+            drum_volumes: [.5,.6,.7,.7,.7,.5,.6,.8],
             hit:56,
             bass:437, 
             synth:521,
@@ -24,15 +24,15 @@ class MainContent extends Component {
                 [false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false],
                 [false,false,true,false,false,false,true,false,false,false,true,false,false,false,true,false],
                 [false,false,false,true,false,false,true,false,false,false,false,true,false,false,true,false],
-                [false,false,true,false,false,false,true,false,false,false,true,false,false,false,true,false],
+                [true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true],
                 [false,false,false,false,true,false,false,false,false,false,false,false,true,false,false,false],
                 [true,false,false,false,true,false,false,false,true,false,false,false,true,false,false,false],
             ],
             data:[],
             bpm:120,
-            eq_values: [10,-3,13,0,10,9,10,20,10,-3],
+            eq_values: [3,-3,3,0,7,9,7,4,4,10],
             reverb_value: .1,
-            master_volume: .5,
+            master_volume: 0.3,
             
         };
         this.beats=[];

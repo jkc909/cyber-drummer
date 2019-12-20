@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
       color: '#14cce0',
       textShadow: '0px 0px 18px',
       letterSpacing: '12px',
-      paddingRight: '56px',
+      paddingRight: '70px',
     },
   }));
 

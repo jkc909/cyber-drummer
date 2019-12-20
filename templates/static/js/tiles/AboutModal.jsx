@@ -53,6 +53,7 @@ export default function TransitionsModal() {
         <Fade in={open}>
           <div className={classes.paper}>
             <h2 id="transition-modal-title" className="transition-modal-title">About Cyber Drummer</h2>
+            <hr style={{borderColor: 'white', width: '75%',}} />
             <p id="transition-modal-description">Creator: Joe Costello, 2019</p>
             <p id="transition-modal-description">Source: <a href="https://github.com/jkc909/music-box" target="_blank">https://github.com/jkc909/music-box</a></p>
             <p id="transition-modal-description">Contact:</p>
