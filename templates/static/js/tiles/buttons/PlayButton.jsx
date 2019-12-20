@@ -12,10 +12,10 @@ const ColorButton = withStyles(theme => ({
     padding: "1px 9px",
     backgroundColor: "black",
     border: "1px outset #8cd58b",
-    boxShadow: "0 0 15px #8cd58b",
+    boxShadow: "0 0 5px #8cd58b",
     textShadow: "0 0 10px #8cd58b",
     color: "#8cd58b",
-    animation: "playglow var(--anim8-time) ease-in-out infinite alternate",
+    animation: "var(--play-anim8) var(--anim8-time) ease-in-out infinite alternate",
     '&:hover': {
       backgroundColor: "#043603",
     },

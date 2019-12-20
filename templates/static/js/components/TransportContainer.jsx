@@ -9,9 +9,6 @@ import BpmContainer from './BpmContainer.jsx'
 class TransportContainer extends Component {
     constructor(props){
         super(props);
-        this.state = {
-
-        };
     };
     render(){
         return(
