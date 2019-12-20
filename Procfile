@@ -1,4 +1,4 @@
-python3 run.py 
-cd templates/static/
-npm run build
-npm run start
+web: python3 run.py 
+web: cd templates/static/
+web: npm run build
+web: npm run start
