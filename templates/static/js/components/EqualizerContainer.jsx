@@ -14,6 +14,7 @@ class EqualizerContainer extends Component {
     handleSliderMove(e,iter) {
         let slider_state=this.state.eq_values
         slider_state[iter]=parseInt(e.target.value)
+        this.props.handleEqSlider(slider_state)
         this.setState({ eq_values: slider_state })
     }
 
@@ -21,23 +22,7 @@ class EqualizerContainer extends Component {
     
 
     render() {
-
-        // const data = [
-        //     ["Year", "Sales"],
-        //     ["2004", 1000],
-        //     ["2005", 1170],
-        //     ["2006", 660],
-        //     ["2007", 890],
-        //     ["2008", 556],
-        //     ["2009", 228],
-        //     ["2010", 906],
-        //     ["2011", 1130],
-        //     ["2012", 1433],
-        //     ["2013", 1030],
-        //   ];
-
-        // let data = this.state.eq_values.map((v,i)=>[`band ${i}`,parseInt(v)])
-
+        
         let data = [["band","value"]]
         this.state.eq_values.forEach((v,i) => {
             data.push([`${i}`,parseInt(v)])

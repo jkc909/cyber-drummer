@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 
-class EqualizerSliders extends Component {
+class EqualizerSliders extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
@@ -9,7 +9,6 @@ class EqualizerSliders extends Component {
     };
 
     render() {
-        
         return(
             <Fragment>
                 <input className='eq-slider' type="range" min={-30} max={30} value={this.props.value} onChange={e=>this.props.handleSliderMove(e,this.props.iter)}></input>

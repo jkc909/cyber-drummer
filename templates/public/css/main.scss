@@ -52,7 +52,7 @@ div.main-container {
 .bottom-container-grid {
     background-color: var(--main-background);
     display: inline-grid;
-    grid-template-columns: 330px 500px;
+    grid-template-columns: 330px 500px 200px;
     padding: 0px 14px 8px 14px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -87,7 +87,7 @@ div.main-container {
 
 .eq-slider-container {
     display: inline-grid;
-    grid-template-columns: 20px 20px 20px 20px 20px 20px 20px 20px ;
+    grid-template-columns: 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px ;
 }
 
 .eq-slider {
