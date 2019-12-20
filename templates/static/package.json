@@ -34,7 +34,6 @@
     "@material-ui/lab": "^4.0.0-alpha.35",
     "fibers": "^4.0.2",
     "history": "^4.10.1",
-    "rc-knob": "^1.0.0",
     "react-modal": "^3.11.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.3.0",
