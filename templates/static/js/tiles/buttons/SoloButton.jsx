@@ -15,7 +15,7 @@ const ColorButton = withStyles(theme => ({
     textShadow: "0 0 10px blue",
     color: "blue",
     '&:hover': {
-      backgroundColor: "#043603",
+      backgroundColor: "#0000ff61",
     },
     '&:disabled': {
       boxShadow: "none",

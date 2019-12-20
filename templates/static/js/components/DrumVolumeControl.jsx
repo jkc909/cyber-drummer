@@ -23,10 +23,7 @@ class DrumVolumeControl extends Component {
     render() {
         return(
             <Fragment>
-                <Grid container spacing={0}>
-                    <Grid item>
-                        <VolumeDown style={{ color: "white" }}/>
-                    </Grid>
+                <Grid container spacing={1}>
                     <Grid item xs>
                         <Slider 
                             value={this.state.volume*10} 

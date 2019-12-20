@@ -6,8 +6,6 @@ import Button from '@material-ui/core/Button';
 const ColorButton = withStyles(theme => ({
   root: {
     minWidth: "30px",
-    // height: "50px",
-    // fontSize: "20px",
     padding: "0px",
     backgroundColor: "black",
     border: "1px outset red",
@@ -15,7 +13,7 @@ const ColorButton = withStyles(theme => ({
     textShadow: "0 0 10px red",
     color: "red",
     '&:hover': {
-      backgroundColor: "#043603",
+      backgroundColor: "#ff000045",
     },
     '&:disabled': {
       boxShadow: "none",
