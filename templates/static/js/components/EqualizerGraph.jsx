@@ -7,6 +7,8 @@ const options = {
   title: "Company Performance",
   curveType: "function",
   legend: { position: "bottom" },
+  colors: ['#6bf6f9'],
+  backgroundColor: '#191919',
   chartArea: {'width': '100%', 'height': '100%'},
   vAxis: {
     viewWindowMode:'explicit',
@@ -20,12 +22,12 @@ class EqualizerGraph extends React.Component {
         super(props)
     }
   render() {
-        debugger;
+        
     return (
       <div className="eq-graph">
         <Chart
           chartType="LineChart"
-          width="300px"
+          width="250px"
           height="100px"
           
           data={this.props.data}

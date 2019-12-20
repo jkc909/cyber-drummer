@@ -50,12 +50,52 @@ div.main-container {
 }
 
 .bottom-container-grid {
+    background-color: var(--main-background);
     display: inline-grid;
     grid-template-columns: 330px 500px;
+    padding: 0px 14px 8px 14px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    grid-column-gap: 15px;
 }
 
 .equalizer-container {
-    background-color: green;
+    background-color: var(--main-background);
+    display: inline-grid;
+    grid-template-columns: 155px 360px;
+    grid-template-areas: 
+        "eqlabel eqlabel"
+        "eq visual";
+    padding-bottom: 16px;
+    border: 1px solid white;
+    border-radius: 15px;
+}
+
+.equalizer-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.eq-label {
+    color: white;
+    grid-area: eqlabel;
+    padding-right: 66px;
+    font-size: 18px;
+}
+
+.eq-slider-container {
+    display: inline-grid;
+    grid-template-columns: 20px 20px 20px 20px 20px 20px 20px 20px ;
+}
+
+.eq-slider {
+    transform: rotate(270deg);
+    width: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .drum-container-grid-items {
@@ -206,6 +246,8 @@ border: 1px solid var(--sequencer-border);
 div.transport-container {
     background-color: var(--main-background);
     padding: 6px;
+    border: 1px solid white;
+    border-radius: 15px;
 }
 
 .tempo-blink {

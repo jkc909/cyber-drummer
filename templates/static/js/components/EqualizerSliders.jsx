@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 class EqualizerSliders extends Component {
     constructor(props) {
@@ -11,9 +11,9 @@ class EqualizerSliders extends Component {
     render() {
         
         return(
-            <div>
-                <input type="range" min={-30} max={30} value={this.props.value} onChange={e=>this.props.handleSliderMove(e,this.props.iter)}></input>
-            </div>
+            <Fragment>
+                <input className='eq-slider' type="range" min={-30} max={30} value={this.props.value} onChange={e=>this.props.handleSliderMove(e,this.props.iter)}></input>
+            </Fragment>
         )
     }
 }

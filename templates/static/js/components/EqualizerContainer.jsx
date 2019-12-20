@@ -56,11 +56,14 @@ class EqualizerContainer extends Component {
 
         return(
             <div className="equalizer-container">
-                <EqualizerGraph 
-                    data={data}
-                />
-                <div>
-                    {sliders}
+                <div className="eq-label equalizer-item">EQUALIZER</div>
+                <div className="equalizer-item">
+                    <div className="eq-slider-container">{sliders}</div>
+                </div>
+                <div className="equalizer-item">
+                    <EqualizerGraph 
+                        data={data}
+                    />
                 </div>
             </div>
         );
