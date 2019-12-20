@@ -52,11 +52,14 @@ div.main-container {
 .bottom-container-grid {
     background-color: var(--main-background);
     display: inline-grid;
-    grid-template-columns: 330px 500px 200px;
+    grid-template-columns: 330px 480px 150px;
     padding: 0px 14px 8px 14px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     grid-column-gap: 15px;
+    margin-top: -1px;
+    border: 1px solid white;
+    border-top: none;
 }
 
 .equalizer-container {
@@ -93,6 +96,25 @@ div.main-container {
 .eq-slider {
     transform: rotate(270deg);
     width: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.master-volume {
+    border: 1px solid white;
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.master-volume-item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -143,6 +165,7 @@ div.main-container {
     background-color: var(--main-background);
     padding-bottom: 12px;
     border-radius: 15px;
+    border: 1px solid white;
 }
 
 
@@ -251,7 +274,7 @@ div.transport-container {
 }
 
 .tempo-blink {
-    background-color: #200404;
+    background-color: #010423;
     animation: var(--anim8) var(--anim8-time) infinite;
     border-radius: 50%;
     color: #d4d4d4;
@@ -260,7 +283,6 @@ div.transport-container {
     padding-top: 25%;
     padding-left: 12%;
     border-style: double;
-    border-color: red;
 }
 
 input[type=number]::-webkit-inner-spin-button, 

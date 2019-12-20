@@ -9,13 +9,13 @@ html {
 }
 
 .led {
-    background-color: #200404;
+    background-color: #010423;
     text-align: center;
     height: 27px;
     width: 27px;
     padding: 1px 0;
     color: #d4d4d4;
-    border: 2px dotted orange;
+    border: 2px dotted #276d95;
     border-radius: 50%;
     animation: var(--anim8) var(--anim8-time-seq) infinite;
     animation-delay: inherit;
@@ -93,10 +93,10 @@ html {
 
 @keyframes blinker {
             10% {
-                background-color: red;
-                box-shadow: 0 0 7px red;
+                background-color: rgb(39, 109, 148);
+                box-shadow: 0 0 7px rgb(39, 109, 148);
             }
             11% {
-                background-color: black;
+                background-color: rgb(1, 4, 35);
             }
         }

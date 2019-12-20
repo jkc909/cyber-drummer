@@ -239,7 +239,16 @@ class MainContent extends Component {
                             eq_values={this.state.eq_values}
                             handleEqSlider={this.handleEqSlider}
                         />
-                        <div>VOlume</div>
+                        <div className="master-volume">
+                            <div>
+                                <input className='eq-slider' type="range" min={0} max={100} value={50} onChange={e=>(e)}></input>
+                            </div>
+                            <div>
+                                <input className='eq-slider' type="range" min={0} max={100} value={50} onChange={e=>(e)}></input>
+                            </div>
+                            <div>Master Reverb</div>
+                            <div>Master Volume</div>
+                        </div>
                     </div>
                 </Grid>
                 <div>

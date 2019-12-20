@@ -18,9 +18,6 @@ class EqualizerContainer extends Component {
         this.setState({ eq_values: slider_state })
     }
 
-
-    
-
     render() {
         
         let data = [["band","value"]]

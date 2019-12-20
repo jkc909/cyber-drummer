@@ -10,6 +10,7 @@ const options = {
   colors: ['#6bf6f9'],
   backgroundColor: '#191919',
   chartArea: {'width': '100%', 'height': '100%'},
+  enableInteractivity: false,
   vAxis: {
     viewWindowMode:'explicit',
     viewWindow: {
@@ -29,7 +30,6 @@ class EqualizerGraph extends React.Component {
           chartType="LineChart"
           width="250px"
           height="100px"
-          
           data={this.props.data}
           options={options}
         />
