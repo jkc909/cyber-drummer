@@ -99,6 +99,7 @@ class MainContent extends Component {
             s.parentNode.replaceChild(node,s);
         });
         document.documentElement.style.setProperty("--anim8", "none");
+        document.documentElement.style.setProperty("--play-anim8", "playglow");
     };
 
     setNewAnimationBpm(){
@@ -110,6 +111,7 @@ class MainContent extends Component {
             document.documentElement.style.setProperty(`--seq-${i}`, `${(i-1) * (bps/4)}s` );
         };
         document.documentElement.style.setProperty("--anim8", "blinker");
+        document.documentElement.style.setProperty("--play-anim8", "none");
     };
 
     fillBeat(){
