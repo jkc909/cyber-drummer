@@ -10,16 +10,23 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 import { makeStyles } from '@material-ui/core/styles';
 
+import AboutModal from '../tiles/AboutModal.jsx'
+
 const useStyles = makeStyles(theme => ({
     root: {
       flexGrow: 1,
-    },
-    menuButton: {
-      marginRight: theme.spacing(2),
+      alignItems: 'center',
+      justifyContent: 'center',
     },
     title: {
       flexGrow: 1,
       fontFamily: "Orbitron",
+      textAlign: 'center',
+      fontSize: '35px',
+      color: '#14cce0',
+      textShadow: '0px 0px 18px',
+      letterSpacing: '12px',
+      paddingRight: '56px',
     },
   }));
 
@@ -29,14 +36,9 @@ const useStyles = makeStyles(theme => ({
     return (
         <div className={classes.root}>
             <AppBar position="static" style={{backgroundColor: '#090112', height: '56px'}}>
-                <Toolbar>
-                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" className={classes.title}>
-                        About
-                    </Typography>
-                    <Button color="inherit">Login</Button>
+                <Toolbar className={classes.root}>
+                    <AboutModal className={classes.aboutButton}/>
+                    <Typography className={classes.title}>Cyber Drummer</Typography>
                 </Toolbar>
             </AppBar>
         </div>

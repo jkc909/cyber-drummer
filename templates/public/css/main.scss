@@ -46,7 +46,7 @@ div.hide-div {
 
 div.main-container {
     justify-content: center;
-    padding-top: 20px;
+    padding-top: 15px;
 }
 
 .bottom-container-grid {
@@ -283,6 +283,11 @@ div.transport-container {
     padding-top: 25%;
     padding-left: 12%;
     border-style: double;
+}
+
+.transition-modal-title {
+    text-align: center;
+    color: #ff00fc
 }
 
 input[type=number]::-webkit-inner-spin-button, 
