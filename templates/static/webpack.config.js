@@ -32,6 +32,6 @@ const config = {
 
 
 
-
+console.log('WEBPACK BUNDLE RAN')
 
 module.exports = config;
