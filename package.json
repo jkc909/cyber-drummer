@@ -1,6 +1,6 @@
 {
 "scripts": {
-    "postinstall": "cd templates/static && npm install && yarn install && npm build"
+    "postinstall": "cd templates/static && npm install && npm build"
   },
 "cacheDirectories": ["client/node_modules"] 
 }
