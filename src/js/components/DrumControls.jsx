@@ -17,14 +17,13 @@ class DrumControls extends PureComponent {
     };
 
     handleMuteButton(e, iter) {
-        let mutes = this.state.muted
+        let mutes = this.state.muted.slice()
         mutes[iter] = !mutes[iter]
         if(!mutes[iter]) {
             this.props.handleVolumeChange(iter,this.state.drum_volumes[iter]);
         } else {
             this.props.handleVolumeChange(iter,0.0001);
         };
-        this.props.handleVolumeState(mutes); // this is wrong
         this.setState({ muted: mutes });
     };
 
