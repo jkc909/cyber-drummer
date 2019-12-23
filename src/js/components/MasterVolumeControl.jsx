@@ -16,7 +16,7 @@ class MasterVolumeControl extends Component {
     render() {
         return(
             <div>
-                <input className='eq-slider' type="range" min={0} max={10} value={this.state.value} onChange={e=>this.handleSliderMove(e)}></input>
+                <input className='master-slider' type="range" min={0} max={10} value={this.state.value} onChange={e=>this.handleSliderMove(e)}></input>
             </div>
         );
     };
