@@ -12,7 +12,7 @@ class EqualizerContainer extends PureComponent {
     };
 
     handleSliderMove(e,iter) {
-        let slider_state=this.state.eq_values
+        let slider_state=this.state.eq_values.slice()
         slider_state[iter]=parseInt(e.target.value)
         this.props.handleEqSlider(slider_state)
         this.setState({ eq_values: slider_state })
