@@ -26,7 +26,6 @@ class EqualizerSliders extends PureComponent {
                     orientation="vertical"
                     style={{height: '75px'}}
                 />
-                {/* <input className='eq-slider' type="range" min={-30} max={30} value={this.props.value} onChange={e=>this.props.handleSliderMove(e,this.props.iter)}></input> */}
             </Fragment>
         )
     }
