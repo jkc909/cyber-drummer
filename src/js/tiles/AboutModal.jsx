@@ -54,7 +54,7 @@ export default function TransitionsModal() {
             <h2 id="transition-modal-title" className="transition-modal-title">About Cyber Drummer</h2>
             <hr style={{borderColor: 'white', width: '75%',}} />
             <p id="transition-modal-description">Creator: Joe Costello, 2019</p>
-            <p id="transition-modal-description">Source: <a href="https://github.com/jkc909/music-box" target="_blank" rel="noopener noreferrer">https://github.com/jkc909/music-box</a></p>
+            <p id="transition-modal-description">Source: <a href="https://github.com/jkc909/cyber-drummer" target="_blank" rel="noopener noreferrer">https://github.com/jkc909/cyber-drummer</a></p>
             <p id="transition-modal-description">Contact:</p>
                 <p> - jkcostello90@gmail.com</p>
                 <p> - <a href="https://www.linkedin.com/in/josephkcostello/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/josephkcostello</a></p>
