@@ -1,6 +1,10 @@
 # Cyber Drummer
 
-## Online drum machine built with React
+Online drum machine built with React
+
+## Instructions
+- `yarn install`
+- `yarn start`
 
 ## Libraries used:
 - MidiSounds-react
