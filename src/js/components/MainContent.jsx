@@ -143,7 +143,7 @@ class MainContent extends Component {
     toggleDrum(track, step){
         let update_track = this.state.tracks.slice()
         update_track[track][step] = !update_track[track][step]
-        this.setState({ tracks: update_track })
+        this.setState({ tracks: update_track }, ()=>{this.fillBeat()})
     };
 
     handleReverbChange(val){
