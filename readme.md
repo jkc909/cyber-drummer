@@ -7,6 +7,6 @@ Online drum machine built with React
 - `yarn start`
 
 ## Libraries used:
-- MidiSounds-react
+- midi-sounds-react
 - material-ui
 - react-google-charts
